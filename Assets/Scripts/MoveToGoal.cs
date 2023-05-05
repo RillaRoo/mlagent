@@ -8,26 +8,39 @@ using Unity.MLAgents.Actuators;
 public class MoveToGoal : Agent
 {
 	[SerializeField] private Transform targetTransform;
+	[SerializeField] private List<GameObject> spikeList;
+	public BufferSensorComponent buff;
 	public override void OnEpisodeBegin()
 	{
+		for (int i = 0; i < spikeList.Count; i++)
+		{
+			Destroy(spikeList[i]);
+		}
+		spikeList.Clear();
 		transform.localPosition = Vector3.zero;
 	}
 	public override void CollectObservations(VectorSensor sensor)
 	{
 		sensor.AddObservation(transform.position);
-		sensor.AddObservation(targetTransform.position);
+		foreach (GameObject spike in spikeList)
+		{
+			Transform spikeTransform = spike.GetComponent<Transform>();
+			Rigidbody spikeRigidbody = spike.GetComponent<Rigidbody>();
+			float[] obs = { transform.position.x - spikeTransform.position.x, spikeTransform.position.x, spikeTransform.position.y, spikeRigidbody.velocity.y };
+			buff.AppendObservation(obs);
+		}
 	}
 
-    public override void OnActionReceived(ActionBuffers actions)
-    {
-        base.OnActionReceived(actions);
+	public override void OnActionReceived(ActionBuffers actions)
+	{
+		base.OnActionReceived(actions);
 		float moveZ = actions.ContinuousActions[0];
 		float moveSpeed = 7f;
 		transform.position += new Vector3(0, 0, moveZ) * Time.deltaTime * moveSpeed;
-    }
+	}
 
-    public override void Heuristic(in ActionBuffers actionsOut)
-    {
+	public override void Heuristic(in ActionBuffers actionsOut)
+	{
 		//base.Heuristic(actionsOut);
 		var continuousActions = actionsOut.ContinuousActions;
 		continuousActions[0] = Input.GetAxisRaw("Horizontal");
@@ -47,5 +60,13 @@ public class MoveToGoal : Agent
 			SetReward(-1f);
 			EndEpisode();
 		}
+	}
+	public void AddSpkie(GameObject spike)
+	{
+		spikeList.Add(spike);
+	}
+	public void RemoveSpkie(GameObject spike)
+	{
+		spikeList.Remove(spike);
 	}
 }
