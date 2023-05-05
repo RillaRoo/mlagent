@@ -125,4 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7bfca053311d242a1e33bff1688b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spikePrefab: {fileID: 8709993411276968564}
+  moveToGoal: {fileID: 1020148883776437082, guid: 7a96d8a425687774e8a77cb69d7640c0, type: 3}
   speed: 5
+  spike: {fileID: 8709993411276968564}

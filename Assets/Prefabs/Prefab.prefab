@@ -338,6 +338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 1020148883776437082, guid: 7a96d8a425687774e8a77cb69d7640c0, type: 3}
+      propertyPath: buff
+      value: 
+      objectReference: {fileID: 5952013829569538167}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a96d8a425687774e8a77cb69d7640c0, type: 3}
 --- !u!1 &8459566125289106845 stripped
@@ -362,6 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8012d5925524537b27131fef517017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SensorName: BufferSensor
+  m_SensorName: buff
   m_ObservableSize: 4
   m_MaxNumObservables: 6

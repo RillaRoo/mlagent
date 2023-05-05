@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1020148883776437083}
   - component: {fileID: 1020148883776437082}
   - component: {fileID: 1020148883776437025}
+  - component: {fileID: 1996430935247740309}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -130,15 +131,22 @@ MonoBehaviour:
   m_BrainParameters:
     VectorObservationSize: 6
     NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 1
+      BranchSizes: 
     VectorActionSize: 01000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
+    hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: MoveToGoal
   TeamId: 0
   m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_DeterministicInference: 0
+  m_ObservableAttributeHandling: 0
 --- !u!114 &1020148883776437082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +164,8 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 1000
   targetTransform: {fileID: 6520206786129682163, guid: 5273d92a995183d49a797fdfad88a6af, type: 3}
+  spikeList: []
+  buff: {fileID: 0}
 --- !u!114 &1020148883776437025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +180,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
+--- !u!114 &1996430935247740309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020148883776437081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8012d5925524537b27131fef517017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: BufferSensor
+  m_ObservableSize: 0
+  m_MaxNumObservables: 0

@@ -61,11 +61,11 @@ public class MoveToGoal : Agent
 			EndEpisode();
 		}
 	}
-	public void AddSpkie(GameObject spike)
+	public void AddSpike(GameObject spike)
 	{
 		spikeList.Add(spike);
 	}
-	public void RemoveSpkie(GameObject spike)
+	public void RemoveSpike(GameObject spike)
 	{
 		spikeList.Remove(spike);
 	}
