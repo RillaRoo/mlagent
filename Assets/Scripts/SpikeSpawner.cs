@@ -26,10 +26,10 @@ public class SpikeSpawner : MonoBehaviour
             //Set the spike's speed
             Spike spikeMovement = spike.GetComponent<Spike>();
             spikeMovement.moveToGoal = moveToGoal;
-            if (spikeMovement != null)
-            {
-                spikeMovement.speed = speed;
-            }
+            //if (spikeMovement != null)
+            //{
+            //    spikeMovement.speed = speed;
+            //}
             //Reset the last spawn time
             lastSpawnTime = Time.time;
         }

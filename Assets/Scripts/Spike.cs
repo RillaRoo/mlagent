@@ -6,25 +6,25 @@ public class Spike : MonoBehaviour
 {
 	public GameObject spikePrefab;
 	public MoveToGoal moveToGoal;
-	public float speed = 5f; //Speed of the spike
+	//public float speed = 5f; //Speed of the spike
 	public GameObject spike;
 	
 	private void Update()
 	{
 		//Move the spike downwards
-		transform.localPosition += Vector3.down * speed * Time.deltaTime;
+		//transform.localPosition += Vector3.down * speed * Time.deltaTime;
 	}
 
-	private void OnTriggerEnter(Collider other)
-	{
+    private void OnCollisionEnter(Collision collision)
+    {
 		//Check if the spike collided with the bottom platform
-		if (other.CompareTag("BottomPlatform"))
+		if (collision.gameObject.CompareTag("BottomPlatform"))
 		{
 			//Destroy the spike
-			GetComponent<MoveToGoal>();
+			//GetComponent<MoveToGoal>();
 			Destroy(gameObject);
 			moveToGoal.RemoveSpike(spike);
-			Debug.Log("Spike destroyed");
+			//Debug.Log("Spike destroyed");
 		}
-	}
+    }
 }
