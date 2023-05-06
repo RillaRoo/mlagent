@@ -8,8 +8,10 @@ using Unity.MLAgents.Actuators;
 public class MoveToGoal : Agent
 {
 	[SerializeField] private Transform targetTransform;
+	[SerializeField] private GameObject floor;
 	[SerializeField] private List<GameObject> spikeList;
 	public BufferSensorComponent buff;
+
 	public override void OnEpisodeBegin()
 	{
 		for (int i = 0; i < spikeList.Count; i++)
@@ -37,6 +39,11 @@ public class MoveToGoal : Agent
 		float moveZ = actions.ContinuousActions[0];
 		float moveSpeed = 7f;
 		transform.position += new Vector3(0, 0, moveZ) * Time.deltaTime * moveSpeed;
+		if (transform.localPosition.y < (floor.transform.position.y + 2))
+		{
+			SetReward(-1f);
+			EndEpisode();
+		}
 	}
 
 	public override void Heuristic(in ActionBuffers actionsOut)
@@ -44,18 +51,11 @@ public class MoveToGoal : Agent
 		//base.Heuristic(actionsOut);
 		var continuousActions = actionsOut.ContinuousActions;
 		continuousActions[0] = Input.GetAxisRaw("Horizontal");
-
 	}
 
-	private void OnTriggerEnter(Collider other)
+	private void OnCollisionEnter(Collision collision)
 	{
-		if (other.TryGetComponent<Spike>(out Spike spike))
-		{
-			SetReward(-1f);
-			EndEpisode();
-		}
-
-		if (other.TryGetComponent<Wall>(out Wall wall))
+		if (collision.collider.TryGetComponent<Spike>(out Spike spike))
 		{
 			SetReward(-1f);
 			EndEpisode();

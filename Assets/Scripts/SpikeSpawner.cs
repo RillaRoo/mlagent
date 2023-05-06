@@ -15,7 +15,7 @@ public class SpikeSpawner : MonoBehaviour
 
     private void Update()
     {
-        // Check if it's time to spawn a new spike
+        //Check if it's time to spawn a new spike
         if (Time.time - lastSpawnTime > 2f / spawnRate)
         {
             
