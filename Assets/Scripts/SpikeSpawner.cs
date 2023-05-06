@@ -16,7 +16,7 @@ public class SpikeSpawner : MonoBehaviour
     private void Update()
     {
         // Check if it's time to spawn a new spike
-        if (Time.time - lastSpawnTime > 1f / spawnRate)
+        if (Time.time - lastSpawnTime > 2f / spawnRate)
         {
             
             //Instantiate a new spike with a random z position, but the same x position as the platform
@@ -25,6 +25,7 @@ public class SpikeSpawner : MonoBehaviour
             moveToGoal.AddSpike(spike);
             //Set the spike's speed
             Spike spikeMovement = spike.GetComponent<Spike>();
+            spikeMovement.moveToGoal = moveToGoal;
             if (spikeMovement != null)
             {
                 spikeMovement.speed = speed;
