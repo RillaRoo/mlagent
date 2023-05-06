@@ -148,6 +148,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 836397862104510607, guid: c64eb03d5c0badd4fa815c9356660c03, type: 3}
+      propertyPath: spike
+      value: 
+      objectReference: {fileID: 8709993411276968564, guid: 78f1a326cb57c1e489d70365f15c9250, type: 3}
+    - target: {fileID: 836397862104510607, guid: c64eb03d5c0badd4fa815c9356660c03, type: 3}
+      propertyPath: moveToGoal
+      value: 
+      objectReference: {fileID: 8459566125289106846}
     - target: {fileID: 8348211419120379668, guid: c64eb03d5c0badd4fa815c9356660c03, type: 3}
       propertyPath: m_Name
       value: Teto
@@ -354,6 +362,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1020148883776437024, guid: 7a96d8a425687774e8a77cb69d7640c0, type: 3}
   m_PrefabInstance: {fileID: 8885081517991761604}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8459566125289106846 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1020148883776437082, guid: 7a96d8a425687774e8a77cb69d7640c0, type: 3}
+  m_PrefabInstance: {fileID: 8885081517991761604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459566125289106845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ccbb53edc4cd548a1f84de2598666e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5952013829569538167
 MonoBehaviour:
   m_ObjectHideFlags: 0

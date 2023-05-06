@@ -27,9 +27,4 @@ public class Spike : MonoBehaviour
 			Debug.Log("Spike destroyed");
 		}
 	}
-	private void SpawnSpike() 
-	{
-		spike = Instantiate(spikePrefab, transform.position, Quaternion.identity);
-		moveToGoal.AddSpike(spike);
-	}
 }
