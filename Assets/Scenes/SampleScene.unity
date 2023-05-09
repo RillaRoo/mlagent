@@ -8837,13 +8837,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5952013829569538167, guid: 2506c015143aa6941aa100b28795ec07, type: 3}
-      propertyPath: m_ObservableSize
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5952013829569538167, guid: 2506c015143aa6941aa100b28795ec07, type: 3}
-      propertyPath: m_MaxNumObservables
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2506c015143aa6941aa100b28795ec07, type: 3}

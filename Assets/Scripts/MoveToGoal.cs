@@ -43,7 +43,7 @@ public class MoveToGoal : Agent
     {
         base.OnActionReceived(actions);
         float moveZ = actions.ContinuousActions[0];
-        float moveSpeed = 7f;
+        float moveSpeed = 10f;
         transform.localPosition += new Vector3(0, 0, moveZ) * Time.deltaTime * moveSpeed;
         if (transform.localPosition.y < floor.transform.localPosition.y - 2)
         {
