@@ -297,5 +297,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: buff
-  m_ObservableSize: 4
+  m_ObservableSize: 3
   m_MaxNumObservables: 6

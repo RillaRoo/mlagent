@@ -29,12 +29,12 @@ public class MoveToGoal : Agent
     }
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(transform);
+        sensor.AddObservation(transform.localPosition);
         foreach (GameObject spike in spikeList)
         {
             Transform spikeTransform = spike.transform;
             Rigidbody spikeRigidbody = spike.GetComponent<Rigidbody>();
-            float[] obs = { transform.position.z - spikeTransform.position.z, spikeTransform.localPosition.z, spikeTransform.localPosition.y, spikeRigidbody.velocity.y };
+            float[] obs = { transform.localPosition.z - spikeTransform.localPosition.z, spikeTransform.localPosition.z, spikeTransform.localPosition.y, spikeRigidbody.velocity.y };
             buff.AppendObservation(obs);
         }
     }
