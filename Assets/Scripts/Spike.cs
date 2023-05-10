@@ -22,9 +22,8 @@ public class Spike : MonoBehaviour
 		{
 			//Destroy the spike
 			//GetComponent<MoveToGoal>();
-			Destroy(gameObject);
 			moveToGoal.RemoveSpike(spike);
-			//Debug.Log("Spike destroyed");
+			Destroy(gameObject);
 		}
     }
 }
