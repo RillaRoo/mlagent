@@ -8,7 +8,7 @@ using Unity.MLAgents.Actuators;
 public class MoveToGoal : Agent
 {
     [SerializeField] private Transform targetTransform;
-    [SerializeField] private GameObject floor;
+    public GameObject floor;
     [SerializeField] private List<GameObject> spikeList;
     public BufferSensorComponent buff;
     private Vector3 initialPos;
